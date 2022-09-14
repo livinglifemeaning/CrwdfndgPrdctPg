@@ -1,0 +1,108 @@
+.rewardCard{
+    border: solid 1px rgb(235, 235, 235); 
+    border-radius: 10px; 
+    padding: 1.5rem; 
+}
+
+.title{
+    font-weight: 700; 
+    font-size: 1.1rem; 
+    cursor: pointer;
+}
+
+.title:hover{
+  color: var(--c-cyan-mid47-50); 
+}
+
+.pledge{
+    font-weight: 700; 
+    color: var(--c-cyan-mid47-50);
+    margin-bottom: 1.5rem; 
+}
+
+.desc{
+    color: var(--c-gray50); 
+    margin-bottom: 1.5rem; 
+}
+
+.remaining{
+    display: flex; 
+    gap: .5rem; 
+    align-items: center;
+    color: var(--c-gray50); 
+    margin-bottom: 1.5rem; 
+}
+
+.num{
+    font-weight: 700; 
+    font-size: 2rem; 
+    color: #000; 
+}
+
+.rewardCard.disabled{
+    position: relative; 
+}
+.rewardCard.disabled{
+  filter: saturate(.3);
+  cursor: not-allowed; 
+}
+
+.optionBox{
+    display: flex; 
+    gap: 1rem; 
+    align-items: center; 
+}
+
+.optionBox input{
+    translate: 0 -50%;
+}
+
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: var(--c-gray50);
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid var(--c-gray50);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--c-cyan-mid47-50);
+  }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  .rewardCard.noReward .optionBox{
+    margin-bottom: 1.5rem; 
+  }
+
+  .rewardCard.noReward .optionBox input{
+    translate: 0; 
+  }
+
+  .rewardCard.disabled .title{
+    cursor: not-allowed; 
+  }
+
+  .rewardCard.disabled .title:hover{
+    color: #000; 
+  }
+
+  .rewardCard:has(input[type="radio"]:checked){
+    border: solid 2px var(--c-cyan-dark28-72)
+  }

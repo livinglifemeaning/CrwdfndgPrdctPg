@@ -1,0 +1,13 @@
+.card{
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+}
+.about{
+    font-size: 1.3rem; 
+    font-weight: 700; 
+}
+
+.projectDesc{
+    color: var(--c-gray50);
+}

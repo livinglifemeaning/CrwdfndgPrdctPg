@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {useSelector, useDispatch} from "react-redux"; 
+import { modalActions } from "./store/index";
+
+import Header from "./components/Header";
+import ProjectBackers from "./components/ProjectBackers";
+import ProjectDescription from "./components/ProjectDescription";
+import AboutCard from "./components/AboutCard";
+import RewardModal from "./components/RewardModal";
+import ThanksModal from "./components/ThanksModal";
 
 function App() {
+  const dispatch = useDispatch(); 
+  const rewardModalIsOpen = useSelector(state => state.modal.rewardModalOpen); 
+  const thanksModalIsOpen = useSelector(state => state.modal.thanksModalOpen)
+  const hideRewardModalHandler = () =>{
+    dispatch(modalActions.hideRewardModal()); 
+  }
+  const hideThanksModalHandler = () =>{
+    dispatch(modalActions.hideThanksModal()); 
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {rewardModalIsOpen && <RewardModal onClose={hideRewardModalHandler}/>}
+    {thanksModalIsOpen && <ThanksModal onClose={hideThanksModalHandler}/>}
+      <Header/>
+      <div className="cardContainer">
+      <ProjectDescription /> 
+      <ProjectBackers />
+      <AboutCard/>
+      </div>
+    </>
   );
 }
 

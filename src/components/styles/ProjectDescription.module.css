@@ -1,0 +1,71 @@
+.card{
+    text-align: center; 
+    position: relative; 
+    height: 100%; 
+    width: 100%; 
+}
+
+.title{
+    line-height: 1.2em; 
+    font-size: 1.6rem; 
+    margin: 1.5rem 0 1rem; 
+}
+
+.desc{
+    color: var(--c-gray50)
+}
+
+.logo{
+    position: absolute; 
+    top: -80px; 
+    left: 50%; 
+    translate: -50%; 
+
+}
+
+.flexContainer{
+    display: flex; 
+    gap: 1rem; 
+    align-items: center; 
+    justify-content: center;
+    margin: 1.5rem 0 .5rem; 
+}
+
+.bookmark{
+    cursor: pointer; 
+}
+
+.bookmark:active{
+   scale: .98;
+}
+
+@media (min-width: 750px) {
+    .flexContainer{
+    justify-content: space-around;
+    }
+    .bookmark{
+        position: relative
+    }
+    .bookmark img{
+        position: absolute; 
+        top: -2px; 
+        left: -15px; 
+    }
+    .dsktopBookmark{
+        background-color: rgb(235, 235, 235); 
+        font-weight: 500; 
+        color: var(--c-gray50);
+        padding: .8em 1.8em .8em 3em;
+        border-radius: 2em; 
+        cursor: pointer; 
+    }
+
+    .dsktopBookmarked{
+        background-color: rgb(238, 246, 247); 
+        font-weight: 500; 
+        color: var(--c-cyan-dark28-72);
+        padding: .8em 1.8em .8em 3em;
+        border-radius: 2em; 
+        cursor: pointer; 
+    }
+}

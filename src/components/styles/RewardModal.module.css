@@ -1,0 +1,16 @@
+.top{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backProject{
+    font-weight: 700; 
+    font-size: 1.1rem; 
+}
+
+.support{
+    color: var(--c-gray50); 
+    font-size: .9rem; 
+    margin: 1.3rem 0; 
+}

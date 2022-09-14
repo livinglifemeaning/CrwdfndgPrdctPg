@@ -1,0 +1,51 @@
+
+.navBox{
+    font-family: var(--f-primary); 
+    font-weight: 500; 
+    font-size: 1.1rem; 
+    list-style-type: none;
+}
+
+.navBox.mobile{
+    position: absolute; 
+    padding: 0; 
+    background-color: #fff;
+    top: 20%; 
+    left: 50%;  
+    width: 85%; 
+    transform: translateX(-50%);
+    padding: 0 1.5rem; 
+    border-radius: .5em; 
+}
+
+.navBox.desktop{
+    color: #fff; 
+    display: flex; 
+    margin: 0; 
+    gap: 1.5rem; 
+}
+
+.navBox li{
+    cursor: pointer;
+
+}
+
+.navBox.mobile li{
+    margin-top: 1.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.navBox.mobile li:not(:last-child){
+    border-bottom: solid .01rem rgb(235, 235, 235); 
+    padding-bottom: 10px;  
+}
+
+.background{
+    position: absolute; 
+    width: 100vw; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0; 
+    top: 0; 
+    z-index: -1; 
+}

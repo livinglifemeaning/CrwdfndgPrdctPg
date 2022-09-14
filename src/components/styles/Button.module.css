@@ -1,0 +1,27 @@
+.btn {
+  font-family: inherit;
+  font-weight: 500;
+  background-color: var(--c-cyan-mid47-50); 
+  color: #fff; 
+  font-size: 1.1rem;
+padding: .8em 1.8em;
+border-radius: 2em; 
+border: 0; 
+cursor: pointer;  
+}
+
+.btn:hover{
+    background-color:  var(--c-cyan-dark28-72)
+}
+
+.btn:active{
+    scale: .98; 
+}
+
+.btn.disabled{
+    background-color: var(--c-gray48);
+    cursor: not-allowed; 
+}
+.btn.disabled:active{
+    scale: 1; 
+}
