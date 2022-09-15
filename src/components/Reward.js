@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { modalActions, rewardActions} from "../store/index";
 
@@ -7,7 +7,6 @@ import PledgeBar from "./PledgeBar";
 import classes from "./styles/Reward.module.css";
 const Reward = ({ data, parent }) => {
   const rewardIsSelected = useSelector((state) => state.reward.selectedReward);
-  const thanksModalIsOpen = useSelector(state => state.modal.thanksModalOpen); 
   const dispatch = useDispatch();
 
   const rewardClickedHandler = () => {
@@ -25,14 +24,8 @@ const Reward = ({ data, parent }) => {
   const handleSelectedReward = () => {
     setSelectedReward(data.title);
     dispatch(rewardActions.selectReward(selectedReward))
+    console.log(rewardIsSelected); 
   };
-
-  const [remainingProducts, setRemainingProducts] = useState(data.remaining); 
-
-  useEffect(() => {if(thanksModalIsOpen && (data.title === selectedReward || data.title === rewardIsSelected)){
-    setRemainingProducts(prevState => prevState -1)
-
-  }}, [data.remaining, thanksModalIsOpen, selectedReward, data.title, rewardIsSelected])
 
   
   let disabled;
@@ -83,7 +76,7 @@ const Reward = ({ data, parent }) => {
 
       {data.remaining >= 0 && (
         <div className={classes.remaining}>
-          <p className={classes.num}>{remainingProducts}</p>
+          <p className={classes.num}>{data.remaining}</p>
           <p>left</p>
         </div>
       )}
