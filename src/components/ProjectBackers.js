@@ -11,6 +11,7 @@ const ProjectBackers = () => {
   return (
    <Card>
     <div className={classes.card}>
+    <div className={classes.dsktpFlex}>
         <div className={classes.section}>
             <p className={classes.num}>${formatNum.format(amountBacked)}</p>
             <p className={classes.desc}>of $100,000 backed</p>
@@ -29,7 +30,7 @@ const ProjectBackers = () => {
             <p className={classes.num}>56</p>
             <p className={classes.desc}>days left</p>
         </div>
-
+        </div>
         <progress value = {amountBacked} max = "100000"/>
     </div>
     </Card>
